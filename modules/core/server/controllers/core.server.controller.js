@@ -56,5 +56,5 @@ exports.sendMail = function(req, res) {
         text: 'Hello'
     });
  
-    res.json(data);
+    //res.json(data);
 };
