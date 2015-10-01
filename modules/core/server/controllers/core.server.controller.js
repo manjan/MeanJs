@@ -55,6 +55,5 @@ exports.sendMail = function(req, res) {
         subject: 'Message from Manish',
         text: 'Hello'
     });
- 
     //res.json(data);
 };
