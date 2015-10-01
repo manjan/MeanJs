@@ -12,4 +12,3 @@ $region = 'ap-southeast-1';
 $as_group = getenv('EC2_GROUP');
 # Document root
 $doc_root = '/var/www/html/Mean';
-
