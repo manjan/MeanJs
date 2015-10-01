@@ -10,13 +10,13 @@ use Aws\Ec2\Ec2Client;
 # Resets the master branch to what you just fetched
 try{
 if (isset($_POST['deploy']) and $_POST['deploy'] == 1)
-	exec('cd ' . $doc_root . ' && git fetch --all && git reset --hard origin/master && grunt');
+	exec('cd ' . $doc_root . ' && git fetch --all && git reset --hard origin/master && grunt prod');
 
 elseif (isset($argc) and $argc == 2 and $argv[1] == 'update')
-	exec('cd ' . $doc_root . ' && git fetch --all && git reset --hard origin/master && grunt');
+	exec('cd ' . $doc_root . ' && git fetch --all && git reset --hard origin/master && grunt prod');
 
 elseif (isset($_REQUEST['payload'])) {
-	exec('cd '. $doc_root .' && git fetch --all && git reset --hard origin/master && grunt');
+	exec('cd '. $doc_root .' && git fetch --all && git reset --hard origin/master && grunt prod');
 	# Create a autoscaling client object
 	$as_client = AutoScalingClient::factory(array(
 	    'key'    => $access_key,
@@ -79,7 +79,7 @@ elseif (isset($_REQUEST['payload'])) {
 		}
 	}
 }else{
-	exec('cd '. $doc_root .' && git fetch --all && git reset --hard origin/master && grunt');
+	exec('cd '. $doc_root .' && git fetch --all && git reset --hard origin/master && grunt prod');
 }
 }
 catch(Exception $e){
