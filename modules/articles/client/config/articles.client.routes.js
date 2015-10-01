@@ -15,7 +15,7 @@ angular.module('articles').config(['$stateProvider',
         templateUrl: 'modules/articles/client/views/list-articles.client.view.html'
       })
       .state('articles.listing', {
-        url: '',
+        url: '/list',
         templateUrl: 'modules/articles/client/views/list-articles.client.view.html'
       })      
       .state('articles.create', {
