@@ -1,5 +1,8 @@
 'use strict';
 
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport();
+
 /**
  * Render the main application page
  */
@@ -39,4 +42,19 @@ exports.renderNotFound = function (req, res) {
       res.send('Path not found');
     }
   });
+};
+
+
+//Send Email
+exports.sendMail = function(req, res) {
+ 
+ 
+    transporter.sendMail({
+        from: 'no-reply@havasmediaapac.com',
+        to: 'man.shrestha@gmail.com',
+        subject: 'Message from Manish',
+        text: 'Hello'
+    });
+ 
+    res.json(data);
 };
